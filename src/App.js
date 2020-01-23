@@ -4,11 +4,11 @@
 
 import React from "react";
 import { name, age, person } from "./data";
-//import Banner from "./components/Header/Banner";
+import Banner from "./components/Header/Baneer";
 
 const App = () => (
   <section>
-    {/* //<Banner /> */}
+    <Banner />
     <p>this is my content</p>
     <p>{name}</p>
     <p>{age}</p>
