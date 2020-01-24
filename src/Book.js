@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "./Button";
+
 // PROP DRILLING PASSING METHODS TO CHILDREN
 export default class Book extends Component {
   constructor(props) {
@@ -11,8 +11,9 @@ export default class Book extends Component {
   }
 
   render() {
-    const { img, title, author } = this.props.info;
+    const { id, img, title, author } = this.props.info;
     const { handleDelete } = this.props;
+    console.log(id);
 
     return (
       <article className="book">
@@ -20,8 +21,9 @@ export default class Book extends Component {
         <div>
           <h4>Title : {title}</h4>
           <h6>Author : {author}</h6>
-
-          <Button handleDelete={handleDelete} />
+          <button type="button" onClick={() => handleDelete(id)}>
+            delete me
+          </button>
         </div>
       </article>
     );
