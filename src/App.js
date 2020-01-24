@@ -3,18 +3,14 @@
 //think of module as file
 
 import React, { Component } from "react";
-import { name, age, person } from "./data";
-import Banner from "./components/Header/Baneer";
+import Booklist from "./Booklist";
 
-// const App = () => (
-//   <section>
-//     <Banner />
-//     <p>this is my content</p>
-//     <p>{name}</p>
-//     <p>{age}</p>
-//     <p>{person.name}</p>
-//   </section>
-// );
+const App = () => (
+  <section>
+    <h3>This our application</h3>
+    <Booklist />
+  </section>
+);
 
 // import * as data from "./data";
 // const App = () => (
@@ -25,17 +21,5 @@ import Banner from "./components/Header/Baneer";
 //     <p>{data.person.name}</p>
 //   </section>
 // );
-class App1 extends Component {
-  render() {
-    return (
-      <section>
-        <p>this is my content</p>
-        <p>{name}</p>
-        <p>{age}</p>
-        <p>{person.name}</p>
-      </section>
-    );
-  }
-}
 
-export default App1;
+export default App;
