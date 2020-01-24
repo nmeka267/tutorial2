@@ -14,11 +14,14 @@ export default class Booklist extends Component {
     ]
   };
   render() {
-    const books = this.state.books.map(item => item.book);
-    console.log(books);
+    // const books = this.state.books.map(item => item.book);
+    //console.log(books);
     return (
       <section>
         <h3>This is our book list</h3>
+        {this.state.books.map((item, index) => (
+          <Book info={item} />
+        ))}
       </section>
     );
   }
