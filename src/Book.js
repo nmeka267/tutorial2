@@ -6,12 +6,16 @@ export default class Book extends Component {
     this.state = {
       count: 1
     };
-    this.handleClick = this.handleClick.bind(this);
+    //this.handleClick = this.handleClick.bind(this);
   }
-  handleClick() {
-    console.log("clicked me");
+  // handleClick() {
+  //   console.log("clicked me");
+  //   console.log(this.state.count);
+  // }
+  handleClick = () => {
+    console.log("yiu clicked me");
     console.log(this.state.count);
-  }
+  };
 
   render() {
     const { img, title, author } = this.props.info;
@@ -21,7 +25,9 @@ export default class Book extends Component {
         <div>
           <h3>Title:{title}</h3>
           <h5>Author:{author}</h5>
-          <button type="button" onClick={this.handleClick}></button>
+          <button type="button" onClick={this.handleClick}>
+            add to cart
+          </button>
         </div>
       </article>
     );
