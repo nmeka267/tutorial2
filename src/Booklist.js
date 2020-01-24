@@ -14,7 +14,7 @@ export default class Booklist extends Component {
     ]
   };
   render() {
-    const books = this.state.books;
+    const books = this.state.books.map(item => item.book);
     console.log(books);
     return (
       <section>
