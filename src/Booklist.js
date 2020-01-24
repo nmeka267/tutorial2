@@ -4,10 +4,12 @@ export default class Booklist extends Component {
   state = {
     books: [
       {
+        id: 1,
         book: "book number one",
         author: "john doe"
       },
       {
+        id: 2,
         book: "book number two",
         author: "bobby doe"
       }
@@ -20,7 +22,7 @@ export default class Booklist extends Component {
       <section>
         <h3>This is our book list</h3>
         {this.state.books.map((item, index) => (
-          <Book info={item} />
+          <Book key={item.id} info={item} />
         ))}
       </section>
     );
