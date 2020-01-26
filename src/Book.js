@@ -17,6 +17,20 @@ export default class Book extends Component {
   };
   render() {
     const { id, img, title, author } = this.props.info;
+    const checkInfo = info => {
+      if (info == true) {
+        return (
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Accusantium ipsum ducimus, ratione, id repellat possimus non
+            voluptate consequuntur rem laudantium minima atque, quia fugiat cum
+            repellendus error excepturi? In, pariatur.
+          </p>
+        );
+      } else {
+        return null;
+      }
+    };
 
     console.log(id);
 
@@ -29,13 +43,14 @@ export default class Book extends Component {
           <button type="button" onClick={this.handleInfo}>
             Toggle info
           </button>
-          {this.state.showInfo ? (
+          {checkInfo(this.state.showInfo)}
+          {/* {this.state.showInfo ? (
             <p>
               In publishing and graphic design, Lorem ipsum is a placeholder
               text commonly used to demonstrate the visual form of a document or
               a typeface without relying on meaningful conten
             </p>
-          ) : null}
+          ) : null} */}
           {/* {this.state.showInfo && (
             <p>
               In publishing and graphic design, Lorem ipsum is a placeholder
