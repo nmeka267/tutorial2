@@ -6,13 +6,18 @@ export default class Book extends Component {
     super(props);
     this.state = {
       count: 1,
-      name: "john"
+      name: "john",
+      showInfo: true
     };
   }
-
+  handleInfo = () => {
+    this.setState({
+      showInfo: !this.state.showInfo
+    });
+  };
   render() {
     const { id, img, title, author } = this.props.info;
-    const { handleDelete } = this.props;
+
     console.log(id);
 
     return (
@@ -21,9 +26,16 @@ export default class Book extends Component {
         <div>
           <h4>Title : {title}</h4>
           <h6>Author : {author}</h6>
-          <button type="button" onClick={() => handleDelete(id)}>
-            delete me
+          <button type="button" onClick={this.handleInfo}>
+            Toggle info
           </button>
+          {this.state.showInfo && (
+            <p>
+              In publishing and graphic design, Lorem ipsum is a placeholder
+              text commonly used to demonstrate the visual form of a document or
+              a typeface without relying on meaningful conten
+            </p>
+          )}
         </div>
       </article>
     );
